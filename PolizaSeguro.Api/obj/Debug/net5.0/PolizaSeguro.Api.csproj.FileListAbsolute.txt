@@ -152,3 +152,4 @@ C:\proyectos\Polizas_autos\PolizaSeguro\PolizaSeguro.Api\bin\Debug\net5.0\Micros
 C:\proyectos\Polizas_autos\PolizaSeguro\PolizaSeguro.Api\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
 C:\proyectos\Polizas_autos\PolizaSeguro\PolizaSeguro.Api\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 C:\proyectos\Polizas_autos\PolizaSeguro\PolizaSeguro.Api\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+C:\proyectos\Polizas_autos\PolizaSeguro\PolizaSeguro.Api\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

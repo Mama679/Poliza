@@ -1,4 +1,5 @@
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -8,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using PolizaSeguro.Core.Interfaces;
 using PolizaSeguro.Core.Services;
@@ -17,6 +19,7 @@ using PolizaSeguro.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace PolizaSeguro.Api
@@ -44,6 +47,8 @@ namespace PolizaSeguro.Api
             services.AddTransient<IClienteServices, ClienteService>();
             services.AddTransient<IAutoRepository, AutoRepository>();
             services.AddTransient<IAutoService, AutoService>();
+            services.AddTransient<IPolizaRepository, PolizaRepository>();
+            services.AddTransient<IPolizaService, PolizaService>();
 
             services.AddDbContext<BD_PolizasContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("BD"))
@@ -51,9 +56,27 @@ namespace PolizaSeguro.Api
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+
             services.AddFluentValidation(options => {
                 options.RegisterValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
             });
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters()
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = Configuration["JWT:Issuer"],
+                        ValidAudience = Configuration["JWT:Audience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(
+                            Encoding.UTF8.GetBytes(Configuration["JWT:ClaveSecreta"])
+                        )
+                    };
+                });
 
             services.AddSwaggerGen(c =>
             {
@@ -76,6 +99,7 @@ namespace PolizaSeguro.Api
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
