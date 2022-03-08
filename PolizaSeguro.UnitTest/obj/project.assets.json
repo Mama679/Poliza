@@ -4953,26 +4953,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mama679\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\mrmanotas\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\proyectos\\Polizas_autos\\PolizaSeguro\\PolizaSeguro.UnitTest\\PolizaSeguro.UnitTest.csproj",
+      "projectUniqueName": "C:\\Proyectos\\Poliza\\Poliza\\PolizaSeguro.UnitTest\\PolizaSeguro.UnitTest.csproj",
       "projectName": "PolizaSeguro.UnitTest",
-      "projectPath": "C:\\proyectos\\Polizas_autos\\PolizaSeguro\\PolizaSeguro.UnitTest\\PolizaSeguro.UnitTest.csproj",
-      "packagesPath": "C:\\Users\\Mama679\\.nuget\\packages\\",
-      "outputPath": "C:\\proyectos\\Polizas_autos\\PolizaSeguro\\PolizaSeguro.UnitTest\\obj\\",
+      "projectPath": "C:\\Proyectos\\Poliza\\Poliza\\PolizaSeguro.UnitTest\\PolizaSeguro.UnitTest.csproj",
+      "packagesPath": "C:\\Users\\mrmanotas\\.nuget\\packages\\",
+      "outputPath": "C:\\Proyectos\\Poliza\\Poliza\\PolizaSeguro.UnitTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Mama679\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\mrmanotas\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -4981,7 +4980,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://www.nuget.org/api/v2/": {}
+        "C:\\uiprocesos\\libreria": {},
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
@@ -5031,7 +5031,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
       }
     }
   }

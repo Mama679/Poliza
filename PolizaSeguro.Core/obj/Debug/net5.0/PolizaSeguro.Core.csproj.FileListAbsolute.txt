@@ -10,3 +10,15 @@ C:\proyectos\Polizas_autos\PolizaSeguro\PolizaSeguro.Core\obj\Debug\net5.0\Poliz
 C:\proyectos\Polizas_autos\PolizaSeguro\PolizaSeguro.Core\obj\Debug\net5.0\PolizaSeguro.Core.dll
 C:\proyectos\Polizas_autos\PolizaSeguro\PolizaSeguro.Core\obj\Debug\net5.0\ref\PolizaSeguro.Core.dll
 C:\proyectos\Polizas_autos\PolizaSeguro\PolizaSeguro.Core\obj\Debug\net5.0\PolizaSeguro.Core.pdb
+C:\Proyectos\Poliza\Poliza\PolizaSeguro.Core\bin\Debug\net5.0\PolizaSeguro.Core.deps.json
+C:\Proyectos\Poliza\Poliza\PolizaSeguro.Core\bin\Debug\net5.0\PolizaSeguro.Core.dll
+C:\Proyectos\Poliza\Poliza\PolizaSeguro.Core\bin\Debug\net5.0\ref\PolizaSeguro.Core.dll
+C:\Proyectos\Poliza\Poliza\PolizaSeguro.Core\bin\Debug\net5.0\PolizaSeguro.Core.pdb
+C:\Proyectos\Poliza\Poliza\PolizaSeguro.Core\obj\Debug\net5.0\PolizaSeguro.Core.csproj.AssemblyReference.cache
+C:\Proyectos\Poliza\Poliza\PolizaSeguro.Core\obj\Debug\net5.0\PolizaSeguro.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Proyectos\Poliza\Poliza\PolizaSeguro.Core\obj\Debug\net5.0\PolizaSeguro.Core.AssemblyInfoInputs.cache
+C:\Proyectos\Poliza\Poliza\PolizaSeguro.Core\obj\Debug\net5.0\PolizaSeguro.Core.AssemblyInfo.cs
+C:\Proyectos\Poliza\Poliza\PolizaSeguro.Core\obj\Debug\net5.0\PolizaSeguro.Core.csproj.CoreCompileInputs.cache
+C:\Proyectos\Poliza\Poliza\PolizaSeguro.Core\obj\Debug\net5.0\PolizaSeguro.Core.dll
+C:\Proyectos\Poliza\Poliza\PolizaSeguro.Core\obj\Debug\net5.0\ref\PolizaSeguro.Core.dll
+C:\Proyectos\Poliza\Poliza\PolizaSeguro.Core\obj\Debug\net5.0\PolizaSeguro.Core.pdb
