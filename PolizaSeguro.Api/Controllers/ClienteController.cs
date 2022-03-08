@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PolizaSeguro.Api.Response;
 using PolizaSeguro.Core.DTO;
 using PolizaSeguro.Core.Entities;
 using PolizaSeguro.Core.Interfaces;
@@ -30,7 +31,9 @@ namespace PolizaSeguro.Api.Controllers
             var clientes = await clienteRepository.getClientes();
 
             var clientesDtos = mapper.Map<IEnumerable<ClienteDto>>(clientes);
-            return Ok(clientesDtos);
+            var respuesta = new Respuesta<IEnumerable<ClienteDto>>(clientesDtos);
+
+            return Ok(respuesta);
         }
 
         [HttpGet("{id}")]
@@ -38,22 +41,45 @@ namespace PolizaSeguro.Api.Controllers
         {
             var cliente = await clienteRepository.getCliente(id);
             var clienteDto = mapper.Map<ClienteDto>(cliente);
+            var respuesta = new Respuesta<ClienteDto>(clienteDto);
 
             if (clienteDto == null)
             {
-                return BadRequest("Cliente No existe");
-            }
+                var respuesta1 = new Respuesta<string>("Cliente No existe");
+                //return BadRequest();
+                return Ok(respuesta1);
+            }           
 
-            return Ok(clienteDto);
+            return Ok(respuesta);
         }
 
-       [HttpPost]
-       public async Task<IActionResult> PostCliente(ClienteDto clienteDto)
+        [HttpPost]
+        public async Task<IActionResult> PostCliente(ClienteDto clienteDto)
         {
             var cliente = mapper.Map<Cliente>(clienteDto);
             var resp = await clienteRepository.addCliente(cliente);
+            var respuesta = new Respuesta<bool>(resp);
+            return Ok(respuesta);
+        }
 
-            return Ok(resp);
+        [HttpPut]
+        public async Task<IActionResult> PutCliente(int id, ClienteDto clientedto)
+        {
+            var cliente = mapper.Map<Cliente>(clientedto);
+            cliente.IdCliente = id;
+
+            var resp = await clienteRepository.updateCliente(cliente);
+            var respuesta = new Respuesta<bool>(resp);
+            return Ok(respuesta);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteCliente(int id)
+        {
+            var resp = await clienteRepository.deleteCliente(id);
+            var respuesta = new Respuesta<bool>(resp);
+            return Ok(respuesta);
+          
         }
     }
 }

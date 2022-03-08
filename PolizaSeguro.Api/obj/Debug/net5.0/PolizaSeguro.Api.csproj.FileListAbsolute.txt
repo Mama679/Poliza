@@ -142,3 +142,13 @@ C:\Proyectos\Poliza\Poliza\PolizaSeguro.Api\bin\Debug\net5.0\System.Runtime.Comp
 C:\Proyectos\Poliza\Poliza\PolizaSeguro.Api\bin\Debug\net5.0\FluentValidation.dll
 C:\Proyectos\Poliza\Poliza\PolizaSeguro.Api\bin\Debug\net5.0\FluentValidation.AspNetCore.dll
 C:\Proyectos\Poliza\Poliza\PolizaSeguro.Api\bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\proyectos\Polizas_autos\PolizaSeguro\PolizaSeguro.Api\bin\Debug\net5.0\PolizaSeguro.Api.StaticWebAssets.xml
+C:\proyectos\Polizas_autos\PolizaSeguro\PolizaSeguro.Api\bin\Debug\net5.0\AutoMapper.dll
+C:\proyectos\Polizas_autos\PolizaSeguro\PolizaSeguro.Api\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\proyectos\Polizas_autos\PolizaSeguro\PolizaSeguro.Api\bin\Debug\net5.0\FluentValidation.dll
+C:\proyectos\Polizas_autos\PolizaSeguro\PolizaSeguro.Api\bin\Debug\net5.0\FluentValidation.AspNetCore.dll
+C:\proyectos\Polizas_autos\PolizaSeguro\PolizaSeguro.Api\bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\proyectos\Polizas_autos\PolizaSeguro\PolizaSeguro.Api\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\proyectos\Polizas_autos\PolizaSeguro\PolizaSeguro.Api\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+C:\proyectos\Polizas_autos\PolizaSeguro\PolizaSeguro.Api\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\proyectos\Polizas_autos\PolizaSeguro\PolizaSeguro.Api\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll

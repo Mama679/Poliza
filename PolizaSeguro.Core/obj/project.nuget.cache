@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AcsuKAFeeUSqvfkEQpfuzKZuL7FJKZTZa8qsI4O1q2knypRfRCN+k5dJWsaueBaFZptjzes4PRIveVSlrAUG5A==",
+  "dgSpecHash": "03VmrQjmr1VF5VrywHBkCbaFxm7XaY7zsDoUD3YYKGmwSSMnTFlobfLLjkdrZXS+un1Uy0bdvG75f2LR19qMvA==",
   "success": true,
-  "projectFilePath": "C:\\Proyectos\\Poliza\\Poliza\\PolizaSeguro.Core\\PolizaSeguro.Core.csproj",
+  "projectFilePath": "C:\\proyectos\\Polizas_autos\\PolizaSeguro\\PolizaSeguro.Core\\PolizaSeguro.Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
