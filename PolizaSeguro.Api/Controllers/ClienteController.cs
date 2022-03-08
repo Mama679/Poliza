@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PolizaSeguro.Core.DTO;
+using PolizaSeguro.Core.Entities;
 using PolizaSeguro.Core.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -14,10 +16,12 @@ namespace PolizaSeguro.Api.Controllers
     public class ClienteController : ControllerBase
     {
         private readonly IClienteRepository clienteRepository;
+        private readonly IMapper mapper;
 
-        public ClienteController(IClienteRepository _clienteRepository)
+        public ClienteController(IClienteRepository _clienteRepository, IMapper _mapper)
         {
             clienteRepository = _clienteRepository;
+            mapper = _mapper;
         }
 
         [HttpGet]
@@ -25,39 +29,31 @@ namespace PolizaSeguro.Api.Controllers
         {
             var clientes = await clienteRepository.getClientes();
 
-            var clientesDto = clientes.Select(x => new ClienteDto
-            {
-                IdCliente = x.IdCliente,
-                Identificacion = x.Identificacion,
-                NombresCliente = x.NombresCliente,
-                ApellidosCliente = x.ApellidosCliente,
-                FechaNacimiento = x.FechaNacimiento,
-                Direccion = x.Direccion,
-                Telefono = x.Telefono,
-                Ciudad = x.Ciudad
-
-            });
-            return Ok(clientesDto);
+            var clientesDtos = mapper.Map<IEnumerable<ClienteDto>>(clientes);
+            return Ok(clientesDtos);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCliente(int id)
         {
             var cliente = await clienteRepository.getCliente(id);
+            var clienteDto = mapper.Map<ClienteDto>(cliente);
 
-            var clienteDto = new ClienteDto
+            if (clienteDto == null)
             {
-                IdCliente = cliente.IdCliente,
-                Identificacion = cliente.Identificacion,
-                NombresCliente = cliente.NombresCliente,
-                ApellidosCliente = cliente.ApellidosCliente,
-                FechaNacimiento = cliente.FechaNacimiento,
-                Direccion = cliente.Direccion,
-                Telefono = cliente.Telefono,
-                Ciudad = cliente.Ciudad
-            };
+                return BadRequest("Cliente No existe");
+            }
 
             return Ok(clienteDto);
+        }
+
+       [HttpPost]
+       public async Task<IActionResult> PostCliente(ClienteDto clienteDto)
+        {
+            var cliente = mapper.Map<Cliente>(clienteDto);
+            var resp = await clienteRepository.addCliente(cliente);
+
+            return Ok(resp);
         }
     }
 }

@@ -1,3 +1,4 @@
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -41,7 +42,12 @@ namespace PolizaSeguro.Api
             services.AddDbContext<BD_PolizasContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("BD"))
             );
-                    
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            services.AddFluentValidation(options => {
+                options.RegisterValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
+            });
 
             services.AddSwaggerGen(c =>
             {

@@ -11,5 +11,6 @@ namespace PolizaSeguro.Core.Interfaces
     {
         Task<IEnumerable<Cliente>> getClientes();
         Task<Cliente> getCliente(int id);
+        Task<bool> addCliente(Cliente cliente);
     }
 }
