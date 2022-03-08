@@ -16,19 +16,19 @@ namespace PolizaSeguro.Api.Controllers
     [ApiController]
     public class ClienteController : ControllerBase
     {
-        private readonly IClienteRepository clienteRepository;
+        private readonly IClienteServices clienteService;
         private readonly IMapper mapper;
 
-        public ClienteController(IClienteRepository _clienteRepository, IMapper _mapper)
+        public ClienteController(IClienteServices _clienteService, IMapper _mapper)
         {
-            clienteRepository = _clienteRepository;
+            clienteService = _clienteService;
             mapper = _mapper;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetClientes()
         {
-            var clientes = await clienteRepository.getClientes();
+            var clientes = await clienteService.getClientes();
 
             var clientesDtos = mapper.Map<IEnumerable<ClienteDto>>(clientes);
             var respuesta = new Respuesta<IEnumerable<ClienteDto>>(clientesDtos);
@@ -39,7 +39,7 @@ namespace PolizaSeguro.Api.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCliente(int id)
         {
-            var cliente = await clienteRepository.getCliente(id);
+            var cliente = await clienteService.getCliente(id);
             var clienteDto = mapper.Map<ClienteDto>(cliente);
             var respuesta = new Respuesta<ClienteDto>(clienteDto);
 
@@ -57,7 +57,7 @@ namespace PolizaSeguro.Api.Controllers
         public async Task<IActionResult> PostCliente(ClienteDto clienteDto)
         {
             var cliente = mapper.Map<Cliente>(clienteDto);
-            var resp = await clienteRepository.addCliente(cliente);
+            var resp = await clienteService.addCliente(cliente);
             var respuesta = new Respuesta<bool>(resp);
             return Ok(respuesta);
         }
@@ -68,7 +68,7 @@ namespace PolizaSeguro.Api.Controllers
             var cliente = mapper.Map<Cliente>(clientedto);
             cliente.IdCliente = id;
 
-            var resp = await clienteRepository.updateCliente(cliente);
+            var resp = await clienteService.updateCliente(cliente);
             var respuesta = new Respuesta<bool>(resp);
             return Ok(respuesta);
         }
@@ -76,7 +76,7 @@ namespace PolizaSeguro.Api.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCliente(int id)
         {
-            var resp = await clienteRepository.deleteCliente(id);
+            var resp = await clienteService.deleteCliente(id);
             var respuesta = new Respuesta<bool>(resp);
             return Ok(respuesta);
           

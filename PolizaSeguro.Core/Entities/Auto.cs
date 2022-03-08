@@ -16,8 +16,8 @@ namespace PolizaSeguro.Core.Entities
         public string Placa { get; set; }
         public string Modelo { get; set; }
         public string CiudadPlaca { get; set; }
-        public bool? Inspeccion { get; set; }
-        public int? ClienteId { get; set; }
+        public bool Inspeccion { get; set; }
+        public int ClienteId { get; set; }
 
         public virtual Cliente Cliente { get; set; }
         public virtual ICollection<Radicado> Radicados { get; set; }

@@ -10,7 +10,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using PolizaSeguro.Core.Interfaces;
+using PolizaSeguro.Core.Services;
 using PolizaSeguro.Infrastructure.Data;
+using PolizaSeguro.Infrastructure.Filters;
 using PolizaSeguro.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
@@ -32,12 +34,16 @@ namespace PolizaSeguro.Api
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers()
-                    .AddNewtonsoftJson(options => 
-                        options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
-                    );
+            services.AddControllers(options =>
+                options.Filters.Add<GlobalExceptionsFilter>()
+            ).AddNewtonsoftJson(options => 
+                  options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
 
             services.AddTransient<IClienteRepository, ClienteRepository>();
+            services.AddTransient<IClienteServices, ClienteService>();
+            services.AddTransient<IAutoRepository, AutoRepository>();
+            services.AddTransient<IAutoService, AutoService>();
 
             services.AddDbContext<BD_PolizasContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("BD"))
